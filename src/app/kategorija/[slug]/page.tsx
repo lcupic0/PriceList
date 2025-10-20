@@ -14,9 +14,9 @@ export interface KategorijaPageParams{
 
 export default async function KategorijaPage({params}: KategorijaPageParams){
 
-  const { slug } = await params;
+  const { slug } = await Promise.resolve(params);
   const fetchedKategorija = await contentfulService.getArtikalsByCategorySlug(slug);
-  
+
   return (
     <div className={`${style.wrapper} ${style.container}`}>
       
