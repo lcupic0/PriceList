@@ -1,0 +1,92 @@
+.wrapper{
+  --max-width: 1300px;
+  --padding: 3rem;
+  
+  margin-inline: auto; /* da postavi left and right -> Logical Property */
+  width: min(var(--max-width), 100% - (2*var(--padding)));
+  
+  padding: 60px 0px;
+
+  position: relative;
+  flex: 1;
+
+  color: rgb(0,0,0);
+
+    display: flex;
+    align-items: center;
+}
+
+.background {
+  position: fixed; /* sticks to viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;    /* full viewport width */
+  height: 100vh;   /* full viewport height */
+
+  background-image: url('/images/pozadina-kava.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+
+  z-index: -1; /* push behind content */
+
+  display: flex;
+  align-items: center;
+}
+
+.proizvodi{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cjenik{
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    outline: 1px solid rgba(0, 0, 0, 0.36);
+    box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.18);
+    padding: 20px 8px;
+    width: 100%;
+    height:fit-content;
+}
+
+.cjenikHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed rgb(0, 0, 0);
+}
+
+.cjenikHeader > div:first-child {
+    font-weight: bold;
+}
+
+.cjenikProizvodi{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nazivProizvoda > div:first-child{
+    font-weight: 500;
+}
+
+.cjenikProizvod{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nazivKategorije{
+    text-transform: uppercase;
+}
+
+.cijenaProizvoda{
+    margin-left: 12px;
+}

@@ -1,0 +1,70 @@
+.wrapper{
+  --max-width: 1300px;
+  --padding: 3rem;
+  
+  margin-inline: auto; /* da postavi left and right -> Logical Property */
+  width: min(var(--max-width), 100% - (2*var(--padding)));
+  
+  padding: 60px 0px;
+
+  position: relative;
+}
+
+.background {
+  position: fixed; /* sticks to viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;    /* full viewport width */
+  height: 100vh;   /* full viewport height */
+
+  background-image: url('/images/pozadina-kava.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+
+  z-index: -1; /* push behind content */
+}
+
+.proizvodi{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 3px 5px 4.8px 0px rgba(0, 0, 0, 0.25);
+    outline: 1px solid rgb(0, 0, 0, 0.5);
+}
+
+.figure{
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+}
+
+.natpis{
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+    height: 20%;
+    background-color: var(--clr-korolar-darker);
+    font-size: 20px;
+    color: var(--clr-neutral-100);
+    font-weight: 400;
+}
+
+@media(min-width: 768px){
+  .proizvodi{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}

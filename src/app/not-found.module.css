@@ -1,0 +1,81 @@
+.notfound{
+    height: calc(100vh - 80px);
+    background-image: url("/pozadina.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {top: 20%; opacity: 0;}
+    to {top: 100; opacity: 1;}
+}
+
+@-webkit-keyframes fadeIn {
+  from {top: 20%; opacity: 0;}
+  to {top: 100; opacity: 1;}
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    --max-width: 1300px;
+    --padding: 1rem;
+    margin-inline: auto; /* da postavi left and right -> Logical Property */
+    width: min(var(--max-width), 100% - (2*var(--padding)));
+    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    animation: fadeIn 2000ms ease;
+    -webkit-animation: fadeIn 2000ms ease;
+}
+
+.naslov{
+    color: var(--clr-accent-400);
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 1;
+}
+
+.opis{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--clr-neutral-100);
+}
+
+.button{
+    cursor: pointer;
+    border: 0;
+    padding: 15px 25px;
+    background: none;
+    color: var(--font-color-200);
+    border: 2px solid var(--font-color-200);
+    font-weight: 600;
+    border-radius: 8px;
+    transition: .2s ease-in-out;
+}
+
+.button:hover{
+    background-color: rgb(255, 255, 255);
+    border: 2px solid var(--clr-neutral-100);
+    color: black;
+}
+
+@media(max-width: 768px){
+    .naslov{
+        font-size: 55px;
+    }
+
+    .opis{
+        font-size:20px;
+    }
+    
+    .button{
+        padding: 12px 22px;
+    }
+}

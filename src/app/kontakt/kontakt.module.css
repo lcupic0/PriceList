@@ -1,0 +1,138 @@
+.kontakt{
+    display: flex;
+    font-family: var(--font-montserrat), sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 300;
+}
+
+.background{
+    position: fixed; /* sticks to viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;    /* full viewport width */
+    height: 100vh;   /* full viewport height */
+
+    background-image: url('/images/pozadina-kava.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+
+    z-index: -1; /* push behind content */
+}
+
+.left-col{
+    background-image: url("/images/kava.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50%;
+    display: none;
+}
+
+.right-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 50px 20px;
+    gap: 40px;
+}
+
+.info > h1{
+    letter-spacing: 1px;
+    color: var(--clr-korolar-darker);
+    font-weight: 400; /* Mozda 300 */
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.info > p{
+    text-align: justify;
+    font-weight: 400;
+    color: #111111;
+    font-size: 13px;
+}
+
+.contactform{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 40px;
+}
+
+.formgroup{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.button{
+    cursor: pointer;
+    border: 0;
+    padding: 15px 16px;
+    background: #393a2d;
+    color: var(--font-color-200);
+    border: none;
+    border-radius: 5px;
+    transition: .1s ease-out;
+}
+
+.button:hover{
+    background: var(--clr-button-hover);
+}
+
+.input{
+    font-family: var(--font-montserrat), sans-serif;
+    letter-spacing: 1px;
+    padding: 10px;
+    border: none;
+    outline: none;
+
+    background: #c3c2a6;
+    border-radius: 5px;
+}
+
+.label{
+    text-transform: uppercase;
+    font-size: var(--fs-200);
+    font-weight: 500;
+    color: var(--clr-korolar-darker);
+}
+
+.textarea{
+    letter-spacing: 1px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    resize: none;
+    background: #c3c2a6;
+    border-radius: 5px;
+}
+
+.logo{
+    padding: 25px;
+    width: 150px;
+    color: var(--clr-accent-500);
+}
+
+@media(min-width: 768px){
+    .left-col{
+        display: block;
+    }
+    .info > h1{
+        font-size: var(--fs-500);
+    }
+    .right-col{
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px){
+    .info > h1{
+        font-size: var(--fs-600);
+    }
+}

@@ -1,0 +1,73 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 120px;
+    background: radial-gradient(circle at top left, #4a4a39, #3a3a2b 70%);
+}
+
+.cta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title{
+    font-size: var(--fs-550);
+    font-family: var(--font-news-cycle), sans-serif;
+    color: var(--clr-neutral-100);
+    font-weight: lighter;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.373);
+}
+
+.icon{
+    color: var(--font-color-300);
+    font-size: 30px;
+    width: 20px;
+    transition: .3s;
+    cursor: pointer;
+}
+.icon:hover{
+    color: var(--clr-accent-400);
+}
+
+.drustvene-mreze{
+    display: flex;
+    gap: 20px;
+}
+
+.potpis{
+    font-weight: 500;
+}
+
+.adresa{
+    font-weight: 500;
+    color: var(--clr-accent-200);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.373);
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+@media (max-width: 768px){
+    .wrapper{
+        padding: 50px 20px;
+    }
+
+    .title{
+        font-size: var(--fs-500);
+    }
+
+    .quote{
+        font-size: 28px;
+    }
+}
