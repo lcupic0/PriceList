@@ -1,10 +1,14 @@
 import style from "./kategorija.module.css";
 import contentfulService from "@/lib/contentfulClient";
 
-const KategorijaPage = async ({ params }: any)  => {
+interface Params {
+    slug: string;
+}
 
-  const fetchedKategorija =
-    await contentfulService.getArtikalsByCategorySlug((await params).slug);
+const KategorijaPage = async ({ params }: { params: Params }) => {
+
+  const { slug } = await Promise.resolve(params);
+  const fetchedKategorija = await contentfulService.getArtikalsByCategorySlug(slug);
 
   return (
     <div className={`${style.wrapper} ${style.container}`}>
