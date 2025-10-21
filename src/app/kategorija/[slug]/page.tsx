@@ -1,12 +1,16 @@
 import style from "./kategorija.module.css";
 import contentfulService from "@/lib/contentfulClient";
 
-export default async function KategorijaPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  // ✅ Works in Next.js 15 and satisfies TypeScript
+interface Params{
+    slug: string;
+}
+
+export interface KategorijaPageParams{
+    params: Params;
+}
+
+const KategorijaPage = async ({params}:KategorijaPageParams) => {
+
   const { slug } = await Promise.resolve(params);
 
   const fetchedKategorija =
@@ -44,3 +48,5 @@ export default async function KategorijaPage({
     </div>
   );
 }
+
+export default KategorijaPage
