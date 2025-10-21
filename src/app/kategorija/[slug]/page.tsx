@@ -1,14 +1,13 @@
+// src/app/kategorija/[slug]/page.tsx
 import style from "./kategorija.module.css";
 import contentfulService from "@/lib/contentfulClient";
 
-interface Params {
-    slug: string;
-}
+export default async function KategorijaPage(props: any) {
+  // params is async at runtime in Next 15
+  const { slug } = await props.params;
 
-const KategorijaPage = async ({ params }: { params: Params }) => {
-
-  const { slug } = await Promise.resolve(params);
-  const fetchedKategorija = await contentfulService.getArtikalsByCategorySlug(slug);
+  const fetchedKategorija =
+    await contentfulService.getArtikalsByCategorySlug(slug);
 
   return (
     <div className={`${style.wrapper} ${style.container}`}>
@@ -17,9 +16,7 @@ const KategorijaPage = async ({ params }: { params: Params }) => {
       <div className={style.cjenik}>
         <div className={style.cjenikHeader}>
           <div className={style.nazivKategorije}>{fetchedKategorija?.naziv}</div>
-          <div className={style.nazivKategorije}>
-            {fetchedKategorija?.nazivEngleski}
-          </div>
+          <div className={style.nazivKategorije}>{fetchedKategorija?.nazivEngleski}</div>
         </div>
 
         <div className={style.cjenikProizvodi}>
@@ -30,7 +27,7 @@ const KategorijaPage = async ({ params }: { params: Params }) => {
                 <div>{artikal.nazivEngleski}</div>
               </div>
               <div className={style.cijenaVolumen}>
-                {artikal.volumen ? <span>{artikal.volumen} l</span> : <span />}
+                {artikal.volumen ? <span>{artikal.volumen} l</span> : <span></span>}
                 <span className={style.cijenaProizvoda}>
                   {artikal.cijena.toFixed(2)} €
                 </span>
@@ -42,5 +39,3 @@ const KategorijaPage = async ({ params }: { params: Params }) => {
     </div>
   );
 }
-
-export default KategorijaPage
