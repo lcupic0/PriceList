@@ -16,7 +16,9 @@ const Footer: React.FC = () => {
         {/* <p className={footer.quote}>Vrhunska kava uz brzu uslugu i povoljne cijene!</p> */}
         <div className={footer.info}>
           <h2 className={footer.title}>CAFFE BAR KOROLAR</h2>
-          <span className={footer.adresa}>Ul. Ruđera Boškovića 37, 21000, Split</span>
+          <a href="https://maps.app.goo.gl/vFxUqYEeDypjr9kJ7" target="_blank" rel="noopener noreferrer" style={{textDecoration: "none"}}>
+            <span className={footer.adresa}>Ul. Ruđera Boškovića 37, 21000, Split</span>
+          </a>
           <span className={footer.potpis}>&copy; 2025. Hrvojeva staza d.o.o.</span>
           <span className={footer.potpis}>Bardojevska ulica 26, 21215 Kaštel Lukšić</span>
           <span className={footer.potpis}>OIB: 08624168661</span>

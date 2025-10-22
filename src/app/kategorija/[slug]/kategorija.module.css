@@ -52,6 +52,12 @@
     padding: 20px 8px;
     width: 100%;
     height:fit-content;
+
+     position: relative;
+     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    will-change: transform;
 }
 
 .cjenikHeader{
@@ -89,4 +95,11 @@
 
 .cijenaProizvoda{
     margin-left: 12px;
+}
+
+@media (hover: none) {
+  .cjenik:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
 }
