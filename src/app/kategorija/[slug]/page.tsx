@@ -2,9 +2,13 @@
 import style from "./kategorija.module.css";
 import contentfulService from "@/lib/contentfulClient";
 
-export default async function KategorijaPage(props: any) {
-  // params is async at runtime in Next 15
-  const { slug } = await props.params;
+// ✅ Explicitly type params as Promise<{ slug: string }>
+export default async function KategorijaPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
 
   const fetchedKategorija =
     await contentfulService.getArtikalsByCategorySlug(slug);
@@ -16,7 +20,9 @@ export default async function KategorijaPage(props: any) {
       <div className={style.cjenik}>
         <div className={style.cjenikHeader}>
           <div className={style.nazivKategorije}>{fetchedKategorija?.naziv}</div>
-          <div className={style.nazivKategorije}>{fetchedKategorija?.nazivEngleski}</div>
+          <div className={style.nazivKategorije}>
+            {fetchedKategorija?.nazivEngleski}
+          </div>
         </div>
 
         <div className={style.cjenikProizvodi}>
