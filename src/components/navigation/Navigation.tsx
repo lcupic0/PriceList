@@ -47,6 +47,11 @@ const Navigation: React.FC = () => {
                       </Link>
                     </li>
                 ))}
+                <li className={`${navigation.listitem}`}>
+                  <Link href={`/kontakt`} className={`${navigation.link} ${splitedPathname === "kontakt" ? navigation.active : ''}`} onClick={() => setIsNavExpanded(!isNavExpanded)}>
+                    Kontaktirajte nas
+                  </Link>
+                </li>
           </ul>
         </nav>
 

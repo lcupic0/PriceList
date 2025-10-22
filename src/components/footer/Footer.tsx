@@ -1,6 +1,6 @@
 "use client"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faFacebook} from "@fortawesome/free-brands-svg-icons"
+import {faSignalMessenger} from "@fortawesome/free-brands-svg-icons"
 import {faInstagram} from "@fortawesome/free-brands-svg-icons"
 import footer from "./footer.module.css"; 
 import { Page } from "@/config";
@@ -26,7 +26,9 @@ const Footer: React.FC = () => {
             <Link href="https://www.instagram.com/caffebar_korolar/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} className={footer.icon}/>
             </Link>
-            <FontAwesomeIcon icon={faFacebook} className={footer.icon} />
+            <Link href="/kontakt" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faSignalMessenger} className={footer.icon} />
+            </Link>
           </div>
         </div>
     </div>
