@@ -9,7 +9,7 @@ const NotFound = () => {
                 <h1 className={style.naslov}>ERROR 404</h1>
                 <div className={style.opis}>Izgleda da stranica koju tražite nije dostupna...</div>
                 <Link href="/" style={{textDecoration: 'none'}}>
-                    <button className={style.button}>Početna stranica</button>
+                    <button className={style.button}>POČETNA STRANICA</button>
                 </Link>
             </div>
         </div>

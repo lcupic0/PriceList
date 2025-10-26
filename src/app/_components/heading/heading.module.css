@@ -27,25 +27,25 @@
 }
 
 .proizvodi{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
 }
 
 .card{
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 3px 5px 4.8px 0px rgba(0, 0, 0, 0.25);
-    outline: 1px solid rgb(0, 0, 0, 0.5);
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 3px 5px 4.8px 0px rgba(0, 0, 0, 0.25);
+  outline: 1px solid rgb(0, 0, 0, 0.5);
 
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
 }
 
 .card:hover,
@@ -55,20 +55,20 @@
 }
 
 .figure{
-    background-size: cover;
-    background-position: center;
-    height: 80%;
+  background-size: cover;
+  background-position: center;
+  height: 80%;
 }
 
 .natpis{
-    display: flex;
-    justify-content: center; /* horizontal */
-    align-items: center;     /* vertical */
-    height: 20%;
-    background-color: var(--clr-korolar-darker);
-    font-size: 20px;
-    color: var(--clr-neutral-100);
-    font-weight: 400;
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+  height: 20%;
+  background-color: var(--clr-korolar-darker);
+  font-size: 20px;
+  color: var(--clr-neutral-100);
+  font-weight: 400;
 }
 
 .card:hover .figure {

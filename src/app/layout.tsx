@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import clsx from "clsx";
 import { 
-  Inter,
   Montserrat,
   Josefin_Sans,
   Dancing_Script,
@@ -11,12 +10,7 @@ import {
 import './globals.css'
 import Navigation from '@/components/navigation/Navigation';
 import Footer from '@/components/footer/Footer';
-import { pages } from '@/config'
 
-const inter = Inter({ 
-  subsets: ["latin"], 
-  variable: "--font-inter" 
-});
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",

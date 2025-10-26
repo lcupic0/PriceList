@@ -13,6 +13,8 @@ export default async function KategorijaPage({
   const fetchedKategorija =
     await contentfulService.getArtikalsByCategorySlug(slug);
 
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
   return (
     <div className={`${style.wrapper} ${style.container}`}>
       <div className={style.background}></div>

@@ -1,18 +1,13 @@
 "use client"
 import style from "./heading.module.css"
 import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { KategorijaItem, ParsiraniArtikal } from "@/lib/contentfulClient";
+import { KategorijaItem } from "@/lib/contentfulClient";
 import contentfulService from "@/lib/contentfulClient";
 import Link from "next/link";
 
 export default function Heading(){
 
   const [kategorije, setKategorije] = useState<KategorijaItem[]>([]);
-
-  useEffect(() => {
-        console.log(kategorije);
-  }, [kategorije]);
 
   useEffect(() => {
     const fetchData = async () => {
