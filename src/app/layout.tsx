@@ -11,7 +11,7 @@ import {
 import './globals.css'
 import Navigation from '@/components/navigation/Navigation';
 import Footer from '@/components/footer/Footer';
-import {pages} from '@/config'
+import { pages } from '@/config'
 
 const inter = Inter({ 
   subsets: ["latin"], 
@@ -53,8 +53,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={clsx(montserrat.variable, josefinSans.variable, dancingScript.variable, metrophobic.variable, newsCycle.variable)}
+      className={clsx(
+        montserrat.variable,
+        josefinSans.variable,
+        dancingScript.variable,
+        metrophobic.variable,
+        newsCycle.variable
+      )}
     >
+      <head>
+        {/* Prevent Safari from linking numbers like OIB */}
+        <meta name="format-detection" content="telephone=no" />
+      </head>
       <body>
         <div className="layout">
           <Navigation />
