@@ -6,7 +6,7 @@ export default function Loading() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 300); // minimal delay before showing loader
+    const timer = setTimeout(() => setShow(true), 200); // minimal delay before showing loader
     return () => clearTimeout(timer);
   }, []);
 

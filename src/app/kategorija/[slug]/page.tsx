@@ -42,6 +42,9 @@ export default async function KategorijaPage({
               </div>
             </div>
           ))}
+          <div className={`${style.cjenikProizvod} ${style.cjenikUpozorenje}`}>
+            Zabranjeno je točenje i prodaja alkoholnih pića osobama mlađim od 18 godina.
+          </div>
         </div>
       </div>
     </div>

@@ -58,7 +58,7 @@
 }
 
 .list .listitem .link.active{
-    color: #D7D7B5;
+    color: #e1e1bd;
 }
 .list .listitem .link.active:after{
     width: 100%;

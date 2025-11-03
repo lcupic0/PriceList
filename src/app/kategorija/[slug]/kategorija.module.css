@@ -97,6 +97,14 @@
     margin-left: 12px;
 }
 
+.cjenikUpozorenje{
+    margin-top: 20px;
+    font-size: 0.8rem;
+    font-style: italic;
+    text-align: center;
+    color: #3b3b2e;
+}
+
 @media (hover: none) {
   .cjenik:active {
     transform: scale(0.98);
