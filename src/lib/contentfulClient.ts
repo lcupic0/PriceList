@@ -31,6 +31,9 @@ query GetArtikalsByCategorySlug($slug: String!) {
               nazivEngleski
               cijena
               volumen
+              sys {
+                firstPublishedAt
+              }
             }
           }
         }
@@ -43,28 +46,30 @@ query GetArtikalsByCategorySlug($slug: String!) {
 const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/environments/master`;
 
 export interface ArtikalByCategorySlugItem {
-  kategorijaCollection:{
+  kategorijaCollection: {
     items: {
       naziv: string;
       nazivEngleski: string;
-      slika: {
-        url: string;
-      }
+      slika: { url: string };
       slug: string;
       linkedFrom: {
         entryCollection: {
           items: ArtikalItem[];
+        };
       };
-    };
-    }[];  
+    }[];
   };
-};
+}
 
-export interface ArtikalItem{
+
+export interface ArtikalItem {
   naziv: string;
   nazivEngleski?: string;
   cijena: number;
   volumen: string;
+  sys: {
+    firstPublishedAt: string;
+  };
 }
 
 export interface KategorijaItem{
@@ -125,16 +130,28 @@ const getArtikalsByCategorySlug = async (slug: string): Promise<ParsiraniArtikal
   const item = body.data.kategorijaCollection.items[0];
   if (!item) return null;
 
+  const artikli = [...item.linkedFrom.entryCollection.items]
+  .filter((artikal: any) => artikal.naziv)
+  .sort(
+    (a, b) =>
+      new Date(a.sys.firstPublishedAt).getTime() -
+      new Date(b.sys.firstPublishedAt).getTime()
+  );
+
+
   return {
     naziv: item.naziv,
     nazivEngleski: item.nazivEngleski,
     slika: item.slika.url,
     slug: item.slug,
-    artikli: item.linkedFrom.entryCollection.items.map(artikal => ({
+    artikli: artikli.map(artikal => ({
       naziv: artikal.naziv,
       nazivEngleski: artikal.nazivEngleski,
       cijena: artikal.cijena,
-      volumen: artikal.volumen
+      volumen: artikal.volumen,
+      sys: {
+        firstPublishedAt: artikal.sys.firstPublishedAt
+      }
     }))
   };
 };

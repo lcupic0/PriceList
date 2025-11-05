@@ -15,6 +15,8 @@ export default async function KategorijaPage({
 
     await new Promise(resolve => setTimeout(resolve, 1500));
 
+    console.log(fetchedKategorija);
+
   return (
     <div className={`${style.wrapper} ${style.container}`}>
       <div className={style.background}></div>
